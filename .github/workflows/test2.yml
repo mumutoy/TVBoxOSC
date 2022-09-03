@@ -2,7 +2,7 @@ name: Test2
 
 on:
   schedule:
-    - cron: 15,45 0-18 * * *
+    - cron: 0 17 * * *
   push:
     branches:
       - master
@@ -15,6 +15,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - userName: q215613905
+            repoName: TVBoxOS
+            branchName: main
+          - userName: takagen99
+            repoName: Box
+            branchName: main
           - userName: mumutoy
             repoName: TVBoxOS
             branchName: main
@@ -82,8 +88,7 @@ jobs:
         with:
           name: ${{ env.tag }}
           tag_name: ${{ env.tag }}
-          body: "Credit: ${{ matrix.userName }}/${{ matrix.repoName }}\n
-                 Commit: ${{ env.commit }}"
+          body: "Credit: ${{ matrix.userName }}/${{ matrix.repoName }}\nCommit: ${{ env.commit }}"
           files: |
             TVBoxOSC/apk/*
             TVBoxOSC/${{ env.commitS }}-source.zip
