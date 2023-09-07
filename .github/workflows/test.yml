@@ -15,11 +15,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: q215613905
-            repoName: TVBoxOS
-            branchName: main
-          - userName: takagen99
-            repoName: Box
+          # - userName: q215613905
+          #   repoName: TVBoxOS
+          #   branchName: main
+          # - userName: takagen99
+          #   repoName: Box
+          #   branchName: main
+          - userName: mumutoy
+            repoName: LazyBoardApp
             branchName: main
     steps:
       - name: Checkout
